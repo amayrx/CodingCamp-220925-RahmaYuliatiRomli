@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>RevoU</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#f7f8fb;
+      --card:#ffffff;
+      --muted:#7b7f87;
+      --accent:#ffb400;
+      --accent-2:#2b6df6;
+      --border:#d7d7d7;
+      --radius:12px;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial; margin:0; background:var(--bg); color:#111}
+
+    /* top browser frame mock */
+    .browser-frame{background:#efefef; border-bottom:1px solid var(--border); padding:8px 12px; display:flex; gap:12px; align-items:center}
+    .dots{display:flex; gap:6px}
+    .dot{width:12px;height:12px;border-radius:50%; background:#f88; box-shadow:inset 0 -2px rgba(0,0,0,.06)}
+    .dot.yellow{background:#ffd36b}
+    .dot.green{background:#7de08a}
+    .address{flex:1; color:#666; font-size:13px}
+
+    header{max-width:var(--container); margin:18px auto; display:flex; align-items:center; gap:18px}
+    .logo{width:48px;height:48px;border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--accent-2)); display:flex;align-items:center;justify-content:center;color:white;font-weight:700;box-shadow:0 6px 18px rgba(43,109,246,.08)}
+    nav{margin-left:auto; display:flex; gap:8px}
+    .nav-btn{border:1px solid var(--border); padding:8px 14px; border-radius:8px; background:transparent; font-weight:600; cursor:pointer}
+
+    main{max-width:var(--container); margin:0 auto;}
+
+    .hero{background:var(--card); border-radius:10px; padding:30px; box-shadow:0 6px 20px rgba(11,20,40,.04); border:1px solid var(--border)}
+    .hero-top{display:flex; align-items:flex-start; gap:20px}
+    .hero h1{margin:8px 0 2px; font-size:22px}
+    .hero p{margin:0; color:var(--muted)}
+
+    .hero-visual{height:300px; margin-top:28px; border:2px dashed #e6e6e6; border-radius:8px; display:flex; align-items:center; justify-content:center; color:#b7b7b7; font-weight:600}
+
+    section{margin-top:28px;}
+
+    .cards{background:var(--card); border-radius:10px; padding:32px; border:1px solid var(--border); box-shadow:0 6px 18px rgba(11,20,40,.03)}
+    .hq-title{font-weight:700; margin-bottom:16px}
+    .hq-list{display:flex; gap:40px; justify-content:flex-start; align-items:center}
+    .hq-item{display:flex; flex-direction:column; align-items:center; gap:12px}
+    .hq-item .circle{width:110px; height:110px; border-radius:50%; border:3px solid #e0e0e0; display:flex; align-items:center; justify-content:center; background:linear-gradient(180deg, rgba(0,0,0,0.01), rgba(0,0,0,0.02))}
+    .hq-item small{color:var(--muted)}
+
+    .split{display:flex; gap:28px; margin-top:28px}
+    .form-card{flex:1; background:var(--card); border-radius:10px; padding:18px; border:1px solid var(--border)}
+    .info-card{width:360px; background:var(--card); border-radius:10px; padding:18px; border:1px solid var(--border); font-size:13px}
+
+    label{display:block; font-size:13px; margin-bottom:6px; color:var(--muted)}
+    input[type=text], input[type=date], textarea, select{width:100%; padding:10px 12px; border-radius:6px; border:1px solid var(--border); outline:none}
+    textarea{min-height:110px; resize:vertical}
+    .row{display:flex; gap:12px}
+    .row .col{flex:1}
+
+    .radios{display:flex; gap:12px; align-items:center; margin:8px 0}
+    .submit{margin-top:12px; width:100%; padding:10px 12px; border-radius:6px; border:0; background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; font-weight:700; cursor:pointer}
+
+    .footer{max-width:var(--container); margin:30px auto; text-align:right; color:var(--muted); font-size:13px}
+
+    @media (max-width:900px){
+      header, main{padding:12px}
+      .split{flex-direction:column}
+      .info-card{width:100%}
+      .hq-list{gap:18px}
+    }
+  </style>
+</head>
+<body>
+  <div class="browser-frame">
+    <div class="dots">
+      <div class="dot"></div>
+      <div class="dot yellow"></div>
+      <div class="dot green"></div>
+    </div>
+    <div class="address">Rahma Yuliati Romli</div>
+    <div style="font-size:13px;color:#666">My Website</div>
+  </div>
+
+  <header>
+    <div class="logo">MY</div>
+    <nav>
+      <button class="nav-btn">Home</button>
+      <button class="nav-btn">My Profile</button>
+      <button class="nav-btn" onclick="document.getElementById('portfolio').scrollIntoView({behavior:'smooth'});">
+  Portofolio
+</button>
+      <button class="nav-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});">
+  Contact Me
+</button>
+
+    </nav>
+  </header>
+
+  <main>
+    <div class="hero">
+      <div class="hero-top">
+        <div style="flex:1">
+          <h1>Hi I'm Amay, Welcome To My Website</h1>
+          <p>Ini adalah website latihan pertama</p>
+        </div>
+      </div>
+
+      <div class="hero-visual" style="background-image: url('back.png');"></div>
+    </div>
+
+    <section class="cards"> 
+  <div class="hq-title" id="portfolio">My project</div>
+      <div class="hq-list">
+        <div class="hq-item">
+          <div class="circle" 
+     style="background-image: url('p1.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;">
+</div>
+          <small>AIMS 2.0</small>
+        </div>
+        <div class="hq-item">
+          <div class="circle" 
+     style="background-image: url('p2.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;">
+</div>
+          <small>POS</small>
+        </div>
+        <div class="hq-item">
+          <div class="circle" 
+     style="background-image: url('image.png'); 
+            background-size: cover; 
+            background-position: center; 
+            background-repeat: no-repeat;">
+</div>
+          <small>E-commerce</small>
+        </div>
+      </div>
+
+      <div class="split" id="contact">
+  <div class="form-card">
+    <h3 style="margin:0 0 12px">Message Us</h3>
+          <form id="contactForm">
+            <div style="margin-bottom:12px">
+              <label>Nama</label>
+              <input type="text" id="name" placeholder="Nama" required>
+            </div>
+            <div style="margin-bottom:12px">
+              <label>Tanggal Lahir</label>
+              <input type="date" id="dob" required>
+            </div>
+            <div style="margin-bottom:12px">
+              <label>Jenis Kelamin</label>
+              <div class="radios">
+                <label><input type="radio" name="gender" value="Laki-Laki" checked> Laki-Laki</label>
+                <label><input type="radio" name="gender" value="Perempuan"> Perempuan</label>
+              </div>
+            </div>
+            <div style="margin-bottom:12px">
+              <label>Pesan</label>
+              <textarea id="message" placeholder="Pesan"></textarea>
+            </div>
+            <button class="submit" type="submit">Submit</button>
+          </form>
+        </div>
+
+        <div class="info-card">
+          <div id="currentTime" style="font-weight:600; margin-bottom:8px"></div>
+          <div id="result">
+            <div><strong>Nama:</strong> -</div>
+            <div><strong>Tanggal Lahir:</strong> -</div>
+            <div><strong>Jenis Kelamin:</strong> -</div>
+            <div style="margin-top:8px"><strong>Pesan:</strong></div>
+            <div id="resMessage" style="color:var(--muted); margin-top:6px">-</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Created By Amayrx</div>
+  </main>
+
+  <script>
+    // update current time display
+    function updateTime(){
+      const now = new Date();
+      const options = { weekday: 'short', year:'numeric', month:'short', day:'numeric' };
+      const timeStr = now.toLocaleDateString('en-GB', options) + ' ' + now.toLocaleTimeString();
+      document.getElementById('currentTime').textContent = 'Current time : ' + timeStr + ' GMT+' + (-now.getTimezoneOffset()/60).toFixed(0);
+    }
+    updateTime();
+    setInterval(updateTime,1000);
+
+    // handle form submit
+    document.getElementById('contactForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim() || '-';
+      const dob = document.getElementById('dob').value || '-';
+      const gender = document.querySelector('input[name="gender"]:checked')?.value || '-';
+      const message = document.getElementById('message').value.trim() || '-';
+
+      document.querySelector('#result div:nth-child(1)').innerHTML = '<strong>Nama:</strong> ' + name;
+      document.querySelector('#result div:nth-child(2)').innerHTML = '<strong>Tanggal Lahir:</strong> ' + dob;
+      document.querySelector('#result div:nth-child(3)').innerHTML = '<strong>Jenis Kelamin:</strong> ' + gender;
+      document.getElementById('resMessage').textContent = message;
+
+      // flash the info-card to show update
+      const card = document.querySelector('.info-card');
+      card.animate([{boxShadow:'0 6px 18px rgba(43,109,246,0.12)'},{boxShadow:'0 6px 18px rgba(11,20,40,0.03)'}],{duration:700});
+
+      // simple success feedback
+      const btn = this.querySelector('.submit');
+      btn.textContent = 'Submitted';
+      setTimeout(()=> btn.textContent = 'Submit', 1400);
+    });
+
+    // set default date placeholder to example date
+    const dobInput = document.getElementById('dob');
+    if(dobInput){ dobInput.value = '1995-11-01'; }
+  </script>
+</body>
+</html>
